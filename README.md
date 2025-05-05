@@ -49,7 +49,7 @@ Cada pasta ou arquivo representa um exemplo prático. Alguns exemplos presentes:
 
 ## 📌 Placa Utilizada
 
-![Nucleo-F446RE](https://www.st.com/content/ccc/resource/technical/image/product_image/group0/e9/d5/4c/90/c4/6f/43/4a/nucleo-64-nucleo-f446re.png/files/nucleo-64-nucleo-f446re.png/_jcr_content/translations/en.nucleo-64-nucleo-f446re.png)
+XXXXX
 
 * **Nucleo-F446RE**
 
