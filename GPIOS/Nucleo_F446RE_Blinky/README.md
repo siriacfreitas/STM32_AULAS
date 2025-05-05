@@ -1,7 +1,3 @@
-Claro! Aqui está um modelo de **README.md** para o seu projeto STM32 que alterna o pino PA5 (normalmente conectado ao LED da placa Nucleo) a cada 1 segundo:
-
----
-
 # Projeto STM32 - Blink com HAL
 
 Este projeto é um exemplo básico de firmware para microcontroladores STM32 utilizando a HAL (Hardware Abstraction Layer) da STMicroelectronics. O código realiza o **toggle do pino PA5** a cada segundo, criando um efeito de piscar em um LED conectado a esse pino (como o LED LD2 em placas Nucleo).
@@ -56,6 +52,6 @@ Esse comportamento gera um piscar periódico no LED.
 
 Este projeto segue os termos da STMicroelectronics, conforme indicado no cabeçalho do arquivo `main.c`. Se nenhum arquivo LICENSE estiver presente, o código é fornecido "AS-IS".
 
----
 
-Deseja que eu gere também esse README como arquivo `.md` para você baixar?
+
+
