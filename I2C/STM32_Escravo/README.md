@@ -12,7 +12,7 @@ Este projeto demonstra uma comunicação I2C básica entre uma placa Arduino Uno
 ## Hardware Necessário
 
 * 1x Placa de desenvolvimento Arduino Uno
-* 1x Placa de desenvolvimento STM32 (ex: Nucleo F446RE)
+* 1x Placa de desenvolvimento STM32 (ex: Nucleo, Blue Pill)
 * 1x **Conversor de Nível Lógico Bidirecional (Essencial!)**
 * Protoboard e Jumpers
 
@@ -30,8 +30,14 @@ Utilize o conversor de nível lógico para conectar as linhas I2C (SDA e SCL).
 | **GND** | GND                 | GND                 | **GND** |
 | **5V** | HV                  | -                   | -                 |
 | -                | -                   | LV                  | **3V3** |
-| **A4 (SDA)** | HV1 (SDA)           | LV1 (SDA)           | **PB7 (I2C1_SDA)**|
-| **A5 (SCL)** | HV2 (SCL)           | LV2 (SCL)           | **PB6 (I2C1_SCL)**|
+| **A4 (SDA)** | HV1 (SDA)           | LV1 (SDA)           | **PB9 (I2C1_SDA)**|
+| **A5 (SCL)** | HV2 (SCL)           | LV2 (SCL)           | **PB8 (I2C1_SCL)**|
+
+
+### Observação sobre Resistores de Pull-up
+O protocolo I2C requer que as linhas de dados (SDA) e clock (SCL) tenham resistores de pull-up.
+* **Pull-ups Internos (STM32):** A maneira mais fácil é habilitar os resistores de pull-up internos do próprio STM32. No STM32CubeIDE, ao configurar os pinos I2C (`PB9` e `PB8`), vá até as configurações de GPIO e certifique-se de que o modo "Pull-up" está selecionado.
+* **Pull-ups Externos:** Se a comunicação for instável ou se os pull-ups internos não forem suficientes, você pode adicionar resistores externos (geralmente entre 4.7kΩ e 10kΩ) conectando as linhas SDA e SCL à sua respectiva fonte de tensão (5V no lado do Arduino e 3.3V no lado do STM32, no conversor de nível lógico).
 
 ---
 
@@ -80,6 +86,6 @@ Utilize o conversor de nível lógico para conectar as linhas I2C (SDA e SCL).
 ### STM32 (Escravo - `STM32 HAL`)
 
 -   `MX_I2C1_Init()`: Função gerada pelo CubeMX/IDE que configura o periférico I2C1 em modo escravo com o endereço definido.
--   `MX_GPIO_Init()`: Configura o pino `PA5` como saída para controlar o LED.
+-   `MX_GPIO_Init()`: Configura o pino `PA5` como saída para controlar o LED. É nesta etapa que os pull-ups dos pinos I2C também são configurados.
 -   `HAL_I2C_Slave_Receive(&hi2c1, i2c_rx_buffer, 1, HAL_MAX_DELAY)`: Esta é a função principal. Ela coloca o STM32 em modo de escuta, aguardando receber dados do mestre. O programa fica bloqueado nesta linha até que `1` byte seja recebido.
 -   Após receber o byte, o código verifica se o caractere é `'1'` ou `'0'` e usa `HAL_GPIO_WritePin()` para ligar (`GPIO_PIN_SET`) ou desligar (`GPIO_PIN_RESET`) o LED.
