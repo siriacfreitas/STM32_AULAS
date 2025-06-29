@@ -34,34 +34,34 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := Nucleo_F446RE_I2C_Arduino
+BUILD_ARTIFACT_NAME := Nucleo_F446RE_I2C_Escravo
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-Nucleo_F446RE_I2C_Arduino.elf \
+Nucleo_F446RE_I2C_Escravo.elf \
 
 MAP_FILES += \
-Nucleo_F446RE_I2C_Arduino.map \
+Nucleo_F446RE_I2C_Escravo.map \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-Nucleo_F446RE_I2C_Arduino.list \
+Nucleo_F446RE_I2C_Escravo.list \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: Nucleo_F446RE_I2C_Arduino.elf secondary-outputs
+main-build: Nucleo_F446RE_I2C_Escravo.elf secondary-outputs
 
 # Tool invocations
-Nucleo_F446RE_I2C_Arduino.elf Nucleo_F446RE_I2C_Arduino.map: $(OBJS) $(USER_OBJS) C:\Users\Lenovo\OneDrive\Documentos\STM32CubeIDE\workspace_1.16.1\Nucleo_F446RE_I2C_Arduino\STM32F446RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "Nucleo_F446RE_I2C_Arduino.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\Lenovo\OneDrive\Documentos\STM32CubeIDE\workspace_1.16.1\Nucleo_F446RE_I2C_Arduino\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Nucleo_F446RE_I2C_Arduino.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Nucleo_F446RE_I2C_Escravo.elf Nucleo_F446RE_I2C_Escravo.map: $(OBJS) $(USER_OBJS) C:\Users\Lenovo\OneDrive\Documentos\STM32CubeIDE\workspace_1.16.1\Nucleo_F446RE_I2C_Escravo\STM32F446RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "Nucleo_F446RE_I2C_Escravo.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\Lenovo\OneDrive\Documentos\STM32CubeIDE\workspace_1.16.1\Nucleo_F446RE_I2C_Escravo\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Nucleo_F446RE_I2C_Escravo.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -70,14 +70,14 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-Nucleo_F446RE_I2C_Arduino.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "Nucleo_F446RE_I2C_Arduino.list"
+Nucleo_F446RE_I2C_Escravo.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "Nucleo_F446RE_I2C_Escravo.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) Nucleo_F446RE_I2C_Arduino.elf Nucleo_F446RE_I2C_Arduino.list Nucleo_F446RE_I2C_Arduino.map default.size.stdout
+	-$(RM) Nucleo_F446RE_I2C_Escravo.elf Nucleo_F446RE_I2C_Escravo.list Nucleo_F446RE_I2C_Escravo.map default.size.stdout
 	-@echo ' '
 
 secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)

@@ -1,5 +1,5 @@
 
-Nucleo_F446RE_I2C_Arduino.elf:     file format elf32-littlearm
+Nucleo_F446RE_I2C_Escravo.elf:     file format elf32-littlearm
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
