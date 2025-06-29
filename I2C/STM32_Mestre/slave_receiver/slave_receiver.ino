@@ -1,4 +1,4 @@
-// ===== CÓDIGO PARA O ESP32 ESCRAVO (SLAVE) =====
+// ===== CÓDIGO PARA O ARDUINO ESCRAVO (SLAVE) =====
 // Ele recebe comandos para ligar/desligar o LED interno.
 
 #include <Wire.h>
@@ -10,7 +10,7 @@ const byte ENDERECO_ESCRAVO = 0x2A;
 const int LED_PIN = 2;
 
 void setup() {
-  Serial.begin(115200);
+  Serial.begin(9600);
   
   // Configura o pino do LED como saída.
   pinMode(LED_PIN, OUTPUT);
