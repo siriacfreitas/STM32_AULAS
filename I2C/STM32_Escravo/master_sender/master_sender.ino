@@ -1,4 +1,4 @@
-// ===== CÓDIGO PARA O ESP32 MESTRE (MASTER) =====
+// ===== CÓDIGO PARA O ARDUINO MESTRE (MASTER) =====
 // Ele envia os comandos '1' e '0' para controlar o LED do escravo.
 
 #include <Wire.h>
@@ -7,7 +7,7 @@
 const byte ENDERECO_ESCRAVO = 0x2A;
 
 void setup() {
-  Serial.begin(115200);
+  Serial.begin(9600);
   
   // Inicia a comunicação I2C como Mestre.
   Wire.begin(); 
