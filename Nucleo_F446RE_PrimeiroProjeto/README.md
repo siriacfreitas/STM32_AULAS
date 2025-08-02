@@ -24,6 +24,7 @@ Core/Src/main.c
 
 Abra o arquivo `main.c` e vá até a seção de variáveis privadas:
 
+
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN PV */
 int teste = 0;
@@ -75,10 +76,7 @@ Depois de compilar, clique no **ícone do inseto verde** na barra superior: 🐞
 Ou vá em:  
 `Run > Debug`
 
-Na **primeira vez que você for rodar o debugger neste projeto**, o STM32CubeIDE abrirá a janela de configuração de debug, como esta:
-
-![Configuração de Debug](./debug_configuracao_stm32.png) 
-
+Na **primeira vez que você for rodar o debugger neste projeto**, o STM32CubeIDE abrirá a janela de configuração de debug.
 ---
 
 ### 🔍 3. Escaneie a Placa (Apenas na Primeira Vez)

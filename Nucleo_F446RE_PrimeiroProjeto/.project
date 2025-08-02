@@ -29,11 +29,4 @@
 		<nature>org.eclipse.cdt.managedbuilder.core.managedBuildNature</nature>
 		<nature>org.eclipse.cdt.managedbuilder.core.ScannerConfigNature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>debug_configuracao_stm32.png</name>
-			<type>1</type>
-			<location>C:/Users/Lenovo/OneDrive/Imagens/Capturas de tela/Captura de tela 2025-08-02 110018.png</location>
-		</link>
-	</linkedResources>
 </projectDescription>
