@@ -28,7 +28,9 @@ Abra o arquivo `main.c` e vá até a seção de variáveis privadas:
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
+
 int teste = 0;
+
 /* USER CODE END PV */
 
 
@@ -39,8 +41,10 @@ Agora vá até o loop principal while(1) e insira o seguinte código dentro da s
 
 
 /* USER CODE BEGIN WHILE */
+
   while (1)
   {
+  
     HAL_Delay(1000);  // Espera 1 segundo
 
     teste++;          // Incrementa a variável
@@ -50,6 +54,7 @@ Agora vá até o loop principal while(1) e insira o seguinte código dentro da s
       teste = 0;      // Reinicia para 0
     }
   }
+  
 /* USER CODE END WHILE */
 
 
