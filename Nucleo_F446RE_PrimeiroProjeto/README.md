@@ -26,14 +26,17 @@ Abra o arquivo `main.c` e vá até a seção de variáveis privadas:
 
 
 /* Private variables ---------------------------------------------------------*/
+
 /* USER CODE BEGIN PV */
 int teste = 0;
 /* USER CODE END PV */
+
 
 Declarar a variável dentro da seção USER CODE BEGIN PV garante que ela será global dentro do main.c e manterá seu valor entre os ciclos do loop. 
 
 ### 12. Criando a Lógica do Contador
 Agora vá até o loop principal while(1) e insira o seguinte código dentro da seção indicada:
+
 
 /* USER CODE BEGIN WHILE */
   while (1)
@@ -48,6 +51,7 @@ Agora vá até o loop principal while(1) e insira o seguinte código dentro da s
     }
   }
 /* USER CODE END WHILE */
+
 
 ## 🐞 Usando o Debugger para "Ver" a Variável `teste`
 
